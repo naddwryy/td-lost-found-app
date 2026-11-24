@@ -1,0 +1,79 @@
+
+{% extends "base.html" %}
+
+{% block title %}Beranda | TD Lost & Found{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">SEKOLAH TUNAS DAUD DENPASAR</p>
+        <h1>Barang Hilang? <br>Temukan Kembali!</h1>
+        <p>
+            Platform Lost & Found sekolah untuk membantu
+            siswa dan guru melaporkan serta menemukan
+            barang yang hilang.
+        </p>
+
+        <div class="hero-buttons">
+            <a class="btn primary" href="{{ url_for('report', report_type='Hilang') }}">
+                Laporkan Barang Hilang
+            </a>
+
+            <a class="btn secondary" href="{{ url_for('report', report_type='Ditemukan') }}">
+                Laporkan Barang Ditemukan
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="statistics">
+    <div class="stat-card">
+        <h2>{{ lost_count }}</h2>
+        <p>Laporan Barang Hilang</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>{{ found_count }}</h2>
+        <p>Laporan Barang Ditemukan</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">INFORMASI TERBARU</p>
+            <h2>Laporan Barang Terbaru</h2>
+        </div>
+
+        <a href="{{ url_for('items') }}">Lihat Semua →</a>
+    </div>
+
+    <div class="item-grid">
+        {% for item in latest_items %}
+        <div class="item-card">
+            <span class="tag">{{ item['report_type'] }}</span>
+            <h3>{{ item['item_name'] }}</h3>
+            <p>{{ item['description'] }}</p>
+            <p class="muted">Lokasi: {{ item['location'] }}</p>
+            <p class="muted">Tanggal: {{ item['report_date'] }}</p>
+
+            <a href="{{ url_for('detail', item_id=item['id']) }}" class="text-link">
+                Lihat Detail →
+            </a>
+        </div>
+        {% else %}
+        <p>Belum ada laporan barang.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="info-box">
+    <h2>Bagaimana Cara Menggunakannya?</h2>
+    <p>1. Laporkan barang yang hilang atau ditemukan.</p>
+    <p>2. Periksa daftar laporan barang.</p>
+    <p>3. Cocokkan informasi barang.</p>
+    <p>4. Hubungi pemilik atau pihak yang menemukan barang.</p>
+</section>
+
+{% endblock %}
