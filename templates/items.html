@@ -1,0 +1,64 @@
+
+{% extends "base.html" %}
+
+{% block title %}Daftar Barang | TD Lost & Found{% endblock %}
+
+{% block content %}
+
+<section class="section">
+    <p class="eyebrow">PENCARIAN BARANG</p>
+    <h1>Daftar Barang</h1>
+    <p>Cari informasi barang hilang atau ditemukan di sekolah.</p>
+
+    <form method="GET" action="{{ url_for('items') }}" class="search-form">
+
+        <input type="text" name="search"
+               value="{{ search }}"
+               placeholder="Cari nama barang, deskripsi, atau lokasi...">
+
+        <select name="type">
+            <option value="">Semua Laporan</option>
+            <option value="Hilang"
+                {% if selected_type == 'Hilang' %}selected{% endif %}>
+                Barang Hilang
+            </option>
+            <option value="Ditemukan"
+                {% if selected_type == 'Ditemukan' %}selected{% endif %}>
+                Barang Ditemukan
+            </option>
+        </select>
+
+        <button class="btn primary" type="submit">Cari</button>
+        <a href="{{ url_for('items') }}" class="btn secondary">Reset</a>
+    </form>
+
+    <div class="item-grid">
+        {% for item in items %}
+        <div class="item-card">
+
+            <span class="tag">{{ item['report_type'] }}</span>
+
+            <h3>{{ item['item_name'] }}</h3>
+
+            <p><strong>Kategori:</strong> {{ item['category'] }}</p>
+            <p>{{ item['description'] }}</p>
+            <p class="muted">Lokasi: {{ item['location'] }}</p>
+            <p class="muted">Tanggal: {{ item['report_date'] }}</p>
+            <p class="muted">Status: {{ item['status'] }}</p>
+
+            <a href="{{ url_for('detail', item_id=item['id']) }}"
+               class="text-link">
+                Lihat Detail →
+            </a>
+        </div>
+
+        {% else %}
+        <div class="info-box">
+            <h3>Barang tidak ditemukan</h3>
+            <p>Belum ada laporan yang sesuai dengan pencarian kamu.</p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
