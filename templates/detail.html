@@ -1,0 +1,39 @@
+
+{% extends "base.html" %}
+
+{% block title %}Detail Barang | TD Lost & Found{% endblock %}
+
+{% block content %}
+
+<section class="detail-container">
+
+    <p class="eyebrow">INFORMASI BARANG</p>
+
+    <span class="tag">{{ item['report_type'] }}</span>
+
+    <h1>{{ item['item_name'] }}</h1>
+
+    <div class="detail-card">
+
+        <p><strong>Kategori:</strong> {{ item['category'] }}</p>
+
+        <p><strong>Deskripsi:</strong></p>
+        <p>{{ item['description'] }}</p>
+
+        <p><strong>Lokasi:</strong> {{ item['location'] }}</p>
+
+        <p><strong>Tanggal:</strong> {{ item['report_date'] }}</p>
+
+        <p><strong>Kontak:</strong> {{ item['contact'] }}</p>
+
+        <p><strong>Status:</strong> {{ item['status'] }}</p>
+
+    </div>
+
+    <a href="{{ url_for('items') }}" class="btn secondary">
+        Kembali ke Daftar Barang
+    </a>
+
+</section>
+
+{% endblock %}
