@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block title %}Form Laporan | TD Lost & Found{% endblock %}
+
+{% block content %}
+
+<section class="form-container">
+    <div class="form-heading">
+        <p class="eyebrow">FORMULIR LAPORAN</p>
+        <h1>Laporkan Barang {{ report_type }}</h1>
+        <p>Isi informasi barang dengan lengkap dan benar.</p>
+    </div>
+
+    <form method="POST" class="report-form">
+
+        <label>Nama Barang</label>
+        <input type="text" name="item_name"
+               placeholder="Contoh: Tempat pensil"
+               maxlength="100" required>
+
+        <label>Kategori Barang</label>
+        <select name="category" required>
+            <option value="">Pilih kategori</option>
+            <option>Alat Tulis</option>
+            <option>Elektronik</option>
+            <option>Pakaian</option>
+            <option>Aksesoris</option>
+            <option>Botol Minum</option>
+            <option>Lainnya</option>
+        </select>
+
+        <label>Deskripsi Barang</label>
+        <textarea name="description"
+                  placeholder="Jelaskan warna, merek, ciri-ciri, dan kondisi barang..."
+                  maxlength="1000" required></textarea>
+
+        <label>Lokasi {{ 'Terakhir Hilang' if report_type == 'Hilang' else 'Ditemukan' }}</label>
+        <input type="text" name="location"
+               placeholder="Contoh: Kelas X-A"
+               maxlength="200" required>
+
+        <label>Tanggal Kejadian</label>
+        <input type="date" name="report_date" required>
+
+        <label>Kontak yang Dapat Dihubungi</label>
+        <input type="text" name="contact"
+               placeholder="Contoh: Nomor WhatsApp atau nama kelas"
+               maxlength="100" required>
+
+        <button type="submit" class="btn primary full">
+            Kirim Laporan
+        </button>
+
+        <a href="{{ url_for('index') }}" class="cancel-link">
+            Kembali ke Beranda
+        </a>
+
+    </form>
+</section>
+
+{% endblock %}
