@@ -1,0 +1,399 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #243047;
+    line-height: 1.6;
+}
+
+.navbar {
+    background: #ffffff;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.logo {
+    color: #244b87;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #43516a;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #3979c9;
+}
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 60vh;
+}
+
+.hero {
+    background: linear-gradient(120deg, #173e75, #397bc4);
+    color: white;
+    padding: 75px 55px;
+    border-radius: 20px;
+}
+
+.eyebrow {
+    color: #6d91c5;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.hero .eyebrow {
+    color: #c5dcff;
+}
+
+.hero h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero-content > p:not(.eyebrow) {
+    max-width: 550px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.primary {
+    background: #397bc4;
+    color: white;
+}
+
+.secondary {
+    background: #e7edf7;
+    color: #29466d;
+}
+
+.hero .secondary {
+    background: white;
+    color: #244b87;
+}
+
+.btn:hover {
+    opacity: 0.88;
+}
+
+.full {
+    width: 100%;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0 50px;
+}
+
+.stat-card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.stat-card h2 {
+    font-size: 35px;
+    color: #397bc4;
+}
+
+.section {
+    margin: 45px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.section-heading a,
+.text-link {
+    color: #397bc4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.item-card {
+    background: white;
+    border-radius: 13px;
+    padding: 24px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.04);
+}
+
+.item-card h3 {
+    margin: 12px 0;
+}
+
+.item-card p {
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.tag {
+    display: inline-block;
+    background: #e7effb;
+    color: #285b9b;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.muted {
+    color: #78849a;
+    font-size: 13px;
+}
+
+.info-box {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    margin: 40px 0;
+}
+
+.info-box p {
+    margin-top: 10px;
+}
+
+.form-container,
+.detail-container {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-heading {
+    margin-bottom: 25px;
+}
+
+.report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.report-form label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea,
+.search-form input,
+.search-form select,
+table select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d9e0eb;
+    border-radius: 7px;
+    font-size: 14px;
+    background: white;
+}
+
+.report-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.cancel-link {
+    text-align: center;
+    color: #63738c;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr auto auto;
+    gap: 10px;
+    margin: 25px 0;
+}
+
+.detail-card {
+    background: #f5f7fb;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+}
+
+.detail-card p {
+    margin: 12px 0;
+    overflow-wrap: anywhere;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 850px;
+}
+
+th, td {
+    padding: 14px;
+    border-bottom: 1px solid #e5eaf1;
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background: #edf3fb;
+    color: #244b87;
+}
+
+.small-btn,
+.delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.small-btn {
+    background: #397bc4;
+    color: white;
+}
+
+.delete-btn {
+    background: #d94c4c;
+    color: white;
+}
+
+.alert {
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.success {
+    background: #e1f6e9;
+    color: #21683b;
+}
+
+.error {
+    background: #ffe7e7;
+    color: #a32d2d;
+}
+
+footer {
+    background: #173e75;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    margin-top: 70px;
+}
+
+@media (max-width: 800px) {
+    .item-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        width: 92%;
+    }
+
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .item-grid,
+    .statistics {
+        grid-template-columns: 1fr;
+    }
+
+    .form-container,
+    .detail-container {
+        padding: 22px;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 12px;
+    }
+}
